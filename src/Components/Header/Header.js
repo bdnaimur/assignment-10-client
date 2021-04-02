@@ -1,11 +1,19 @@
 import React from 'react';
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { userContext } from '../../App';
 import './Header.css'
 
 const Header = () => {
+    const [loggedInUser, setLoggedInUser] = useContext(userContext);
+    const handleClick = () => {
+        const getData = {...loggedInUser};
+        getData.isSigned = false;
+        setLoggedInUser(getData);
+    }
     const cpName = {
         fontWeight : "700",
-        color: "lightGreen",
+        color: "darkGreen",
         marginTop: "20px",
         textShadow: "2px 2px 5px lightGray"
     }
@@ -40,10 +48,7 @@ const Header = () => {
                                 {/* <a class="nav-link" href="/deals">Deals</a> */}
                                 <Link class="nav-link " to="/deals">Deals</Link>
                             </li>
-                            {/* <Link class="nav-item nav-link" to="/home">Home <span class="sr-only">(current)</span></Link> */}
-                            {/* <Link class="nav-item nav-link" to="/admin">Admin</Link> */}
-                            {/* <Link class="nav-item nav-link" to="/orders">Orders</Link> */}
-                            {/* <Link class="nav-item nav-link " to="/deals">Deals</Link> */}
+                            {loggedInUser.isSigned && <li onClick={handleClick} className="nav-item btn btn-light">Sign Out</li>}
                         </ul>
                     </div>
                 </div>

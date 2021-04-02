@@ -10,7 +10,7 @@ const Home = () => {
         fetch(url)
         .then(res =>res.json())
         .then(data =>setPitha(data))
-    },[])
+    },[pitha])
     return (
         <div className="container">
             <div className="row">

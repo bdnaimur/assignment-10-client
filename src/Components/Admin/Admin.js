@@ -28,7 +28,7 @@ const Admin = () => {
     .then(data =>{
       console.log(data);
       setPithaWithUser(data)})
-},[])
+},[pithaWithUser])
   const onSubmit = data => {
     const eventData = {
       name: data.name,
@@ -119,7 +119,7 @@ const Admin = () => {
                 <br />
                 <input className="btn btn-info" type="submit" />
               </form>
-               :<h6>Please Select Edit if you want to add product</h6>}
+               :<h6 style={{backgroundColor:"lightCyan", textAlign:"center", padding:"5px 0px"}}>Please Select Add if you want to add product</h6>}
                {clicked.manage ? <div>
                                       {/* <table class="table"> */}
                                         {/* <tr>
@@ -132,7 +132,7 @@ const Admin = () => {
                                         </tr>
                                       </table> */}
                                       {pithaWithUser.map(pitha => <AllData pitha = {pitha}></AllData>)}          
-                                </div> : <h6>Please Select manage if you want to Edit or Delete</h6>}
+                                </div> : <h6 style={{backgroundColor:"lightCyan", textAlign:"center", padding:"5px 0px"}}>Please Select Manage if you want to Edit or Delete</h6>}
             </div>
         </div>
       </div>

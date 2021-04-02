@@ -1,12 +1,12 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 const AllData = (props) => {
     console.log(props);
     const pitha = props.pitha;
     const deletePitha = (event,id) => {
-        console.log(id.target);
+        console.log(event.currentTarget);
         console.log(id);
-        fetch(`https://nameless-atoll-15862.herokuapp.com/delete/${id}`,{
+            fetch(`https://nameless-atoll-15862.herokuapp.com/delete/${id}`,{
             method: 'DELETE',
         })
         .then(res => res.json())
@@ -15,20 +15,11 @@ const AllData = (props) => {
                 event.target.parentNode.style.display = 'none';
             }
         })
+
     }
     return (
         <div>
             <table class="table table-striped">
-                {/* <thead >
-                    <tr>
-                    <th scope="col"></th>
-                    <th scope="col"></th>
-                    <th scope="col"></th>
-                    <th scope="col"></th>
-                    <th scope="col"></th>
-                    <th scope="col"></th>
-                    </tr>
-                </thead> */}
                 <tbody>
                     <tr>
                         <td>{pitha.name}</td>
