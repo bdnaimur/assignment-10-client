@@ -42,9 +42,9 @@ function App() {
           <PrivateRoute path="/checkOut/:pithaId">
             <CheckOut/>
           </PrivateRoute>
-          <Route path="/admin">
+          <PrivateRoute path="/admin">
              <Admin/>
-            </Route>
+            </PrivateRoute>
           <PrivateRoute path="/orders">
               <Orders/>
             </PrivateRoute>

@@ -94,6 +94,11 @@ const Admin = () => {
           </div>
           
             <div className="col-md-8">
+              {pithaWithUser.length === 0 && <div style={{textAlign:"center"}}>
+                                                <div class="spinner-border text-info" role="status">
+                                                <span class="sr-only">Loading...</span>
+                                                </div>
+                                              </div>}
             {clicked.add ? 
               <form className="shadow p-5" onSubmit={handleSubmit(onSubmit)}>
                 <div class="form-row">

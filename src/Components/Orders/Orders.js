@@ -29,6 +29,11 @@ const Orders = () => {
                     </tr>
                 </thead>
             </table>
+            {pitha.length === 0 && <div style={{textAlign:"center"}}>
+                                                <div class="spinner-border text-info" role="status">
+                                                <span class="sr-only">Loading...</span>
+                                                </div>
+                                              </div>}
             {pitha.map(pth => <AllOrders pitha={pth}></AllOrders>)}
         </div>
         //     {/* </div>
