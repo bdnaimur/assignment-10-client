@@ -22,7 +22,7 @@ const Admin = () => {
   });
 
   useEffect(()=>{
-    const url = `http://localhost:5055/pithaAllUser`;
+    const url = `https://nameless-atoll-15862.herokuapp.com/pithaAllUser`;
     fetch(url)
     .then(res =>res.json())
     .then(data =>{
@@ -36,7 +36,7 @@ const Admin = () => {
       price: data.price
     };
     console.log(eventData);
-    const url = `http://localhost:5055/addPithas`;
+    const url = `https://nameless-atoll-15862.herokuapp.com/addPithas`;
 
     fetch(url, {
       method: 'POST',

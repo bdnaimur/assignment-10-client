@@ -9,7 +9,7 @@ const CheckOut = () => {
     const [loggedInUser, setLoggedInUser] = useContext(userContext);
 
     useEffect(() => {
-        const url = "http://localhost:5055/pithas";
+        const url = "https://nameless-atoll-15862.herokuapp.com/pithas";
         console.log(url);
         fetch(url)
             .then(res => res.json())
@@ -24,7 +24,7 @@ const CheckOut = () => {
         productWithUser.email = loggedInUser.email;
         productWithUser.displayName = loggedInUser.displayName;
         console.log(productWithUser);
-        const url = "http://localhost:5055/addProductWithUser";
+        const url = "https://nameless-atoll-15862.herokuapp.com/addProductWithUser";
         fetch(url, {
             method: 'POST', 
             headers: {

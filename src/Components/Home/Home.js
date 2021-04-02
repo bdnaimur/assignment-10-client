@@ -5,7 +5,7 @@ import Pithas from '../Pithas/Pithas';
 const Home = () => {
     const [pitha, setPitha] = useState([]);
     useEffect(()=>{
-        const url = `http://localhost:5055/pithas`;
+        const url = `https://nameless-atoll-15862.herokuapp.com/pithas`;
         fetch(url)
         .then(res =>res.json())
         .then(data =>setPitha(data))

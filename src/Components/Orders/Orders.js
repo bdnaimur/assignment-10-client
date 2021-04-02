@@ -7,7 +7,7 @@ const Orders = () => {
     const [loggedInUser, setLoggedInUser] = useContext(userContext);
     const [pitha, setPitha] = useState([]);
     useEffect(() => {
-        const url = `http://localhost:5055/pithaUser?email=${loggedInUser.email}`;
+        const url = `https://nameless-atoll-15862.herokuapp.com/pithaUser?email=${loggedInUser.email}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setPitha(data))

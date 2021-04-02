@@ -6,7 +6,7 @@ const AllData = (props) => {
     const deletePitha = (event,id) => {
         console.log(id.target);
         console.log(id);
-        fetch(`http://localhost:5055/delete/${id}`,{
+        fetch(`https://nameless-atoll-15862.herokuapp.com/delete/${id}`,{
             method: 'DELETE',
         })
         .then(res => res.json())
