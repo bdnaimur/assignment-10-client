@@ -13,6 +13,7 @@ import { faTasks } from '@fortawesome/free-solid-svg-icons'
 
 const Admin = () => {
   const { register, handleSubmit, watch, errors } = useForm();
+  const[render, setRender] = useState(false);
   const [imageURL, setIMageURL] = useState(null);
   const [pithaWithUser, setPithaWithUser] = useState([]);
   const [clicked, setClicked] = useState({
@@ -27,8 +28,10 @@ const Admin = () => {
     .then(res =>res.json())
     .then(data =>{
       console.log(data);
+      const newRender = true;
+      setRender(render);
       setPithaWithUser(data)})
-},[pithaWithUser])
+},[render])
   const onSubmit = data => {
     const eventData = {
       name: data.name,

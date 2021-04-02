@@ -11,7 +11,7 @@ const Orders = () => {
         fetch(url)
             .then(res => res.json())
             .then(data => setPitha(data))
-    }, [pitha])
+    }, [])
     console.log(pitha);
     return (
         // <div className="container">
