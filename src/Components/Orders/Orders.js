@@ -6,12 +6,14 @@ import AllOrders from '../AllOrders/AllOrders';
 const Orders = () => {
     const [loggedInUser, setLoggedInUser] = useContext(userContext);
     const [pitha, setPitha] = useState([]);
+    let dependency = 0;
     useEffect(() => {
         const url = `https://nameless-atoll-15862.herokuapp.com/pithaUser?email=${loggedInUser.email}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setPitha(data))
-    }, [])
+            dependency = 1
+    }, [dependency])
     console.log(pitha);
     return (
         // <div className="container">
